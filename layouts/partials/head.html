@@ -65,4 +65,7 @@
   {{ range $filename := .Site.Params.plugins_html }}
     {{ partial $filename $ }}
   {{ end }}
+  {{ if templates.Exists "partials/microhook-head.html" }}
+    {{ partial "microhook-head.html" . }}
+  {{ end }}
 </head>
